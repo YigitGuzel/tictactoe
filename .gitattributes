@@ -1,2 +1,48 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("https://wallpaper.dog/large/5448919.jpg");
+        background-position: top-left;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <form>
+      <input type="text" id="task" placeholder="Enter new task">
+      <button type="button" onclick="addTask()">Add Task</button>
+    </form>
+    <br>
+    <ul id="task-list">
+    </ul>
+    <script>
+      function addTask() {
+        // Get the task input
+        var task = document.getElementById("task").value;
+
+        // Create a new list item with a checkbox and the task label
+        var listItem = document.createElement("li");
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        var label = document.createElement("label");
+        label.innerHTML = task;
+
+        // Add the checkbox and label to the list item, and the delete button
+        listItem.appendChild(checkbox);
+        listItem.appendChild(label);
+        listItem.appendChild(document.createElement("br"));
+        listItem.appendChild(document.createTextNode("Delete"));
+
+        // Add the list item to the task list
+        document.getElementById("task-list").appendChild(listItem);
+
+        // Clear the task input
+        document.getElementById("task").value = "";
+      }
+    </script>
+  </body>
+</html>
